@@ -6,7 +6,7 @@ module.exports = ({ products }) => {
       return `
       <tr>
         <td>${product.title}</td>
-        <td>${product.price}</td>
+        <td>BRL ${product.price}</td>
         <td>
           <a href="/admin/products/${product.id}/edit">
             <button class="button is-link">
@@ -15,7 +15,9 @@ module.exports = ({ products }) => {
           </a>
         </td>
         <td>
-          <button class="button is-danger">Delete</button>
+          <form method="POST" action="/admin/products/${product.id}/delete">
+            <button class="button is-danger">Delete</button>
+          </form>
         </td>
       </tr>
     `;
